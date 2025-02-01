@@ -7,7 +7,6 @@ const BmiCalculator = () => {
   const [selectedWeightUnit, setSelectedWeightUnit] = useState("kg");
   const [selectedHeightUnit, setSelectedHeightUnit] = useState("m");
 const [status, setStatus] = useState("Not Calculated");
-const [progress, setProgress] = useState(0);
 const [color, setcolor] = useState("");
       const weightHandler = (e) => {
     setUserWeight(parseFloat(e.target.value) || 0);
@@ -41,10 +40,9 @@ const [color, setcolor] = useState("");
       return;
     }
   
-    const heightInMeters = UserHeight / 100; // Convert cm to meters
+    const heightInMeters = UserHeight / 100; 
     const bmiValue = (UserWeight / (heightInMeters ** 2)).toFixed(2);
   
-    // Prevent unnecessary state updates
     if (bmiValue !== BMI) {
       setBMI(bmiValue);
       

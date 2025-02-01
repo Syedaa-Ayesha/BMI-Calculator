@@ -68,8 +68,6 @@ button {
   margin-bottom: 10px;
 }
 
-
-/* Media Query for Larger Screens (Tablets & Desktops) */
 @media (max-width: 780px) {
   .container {
     width: 80%;
