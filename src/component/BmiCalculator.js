@@ -69,7 +69,7 @@ const [color, setcolor] = useState("");
     <>
     <div className="container">
       <h1>BMI Calculator</h1>
-      <p>Calculate your Body Mass Index and check your weight status.</p>
+      <p>"Calculate your Body Mass Index and check your weight status."</p>
       <form onSubmit={(e) => e.preventDefault()}>
         <input
           type="number"
@@ -77,19 +77,17 @@ const [color, setcolor] = useState("");
           placeholder="Enter your weight"
           onChange={weightHandler}
         />
-        <div className="units">
-          <label>
-            Kilogram
+        <div className="units"> <p>Select Weight Unit:</p>          
+            <label>
             <input
               type="radio"
               name="weightUnit"
               value="kg"
               checked={selectedWeightUnit === "kg"}
               onChange={() => setSelectedWeightUnit("kg")}
-            />
+            />Kilogram
           </label>
           <label>
-            Ibs
             <input
               type="radio"
               name="weightUnit"
@@ -99,7 +97,7 @@ const [color, setcolor] = useState("");
                 setSelectedWeightUnit("lbs");
                 ibsToKgConversion();
               }}
-            />
+            />  Ibs
           </label>
         </div>
 
@@ -108,7 +106,7 @@ const [color, setcolor] = useState("");
           placeholder="Enter your height"
           onChange={heightHandler}
         />
-        <div className="height">
+        <div className="height"><p>Select Height Unit:</p> 
           <label>
             Meter
             <input
@@ -146,17 +144,6 @@ const [color, setcolor] = useState("");
             />
           </label>
         </div>
-        <div className="Gender">
-          <label>
-            Male
-            <input type="radio" name="gender" value="Male" />
-          </label>
-          <label>
-            Female
-            <input type="radio" name="gender" value="Female" />
-          </label>
-        </div>
-        <input type="number" placeholder="Enter your Age" />
       </form>
       <button type="submit" onClick={calculateBMI}>
         Calculate BMI
